@@ -32,7 +32,9 @@ function gameStart(){
 // var randomarea = Math.floor(Math.random() * 120) + 19;
 // console.log()
 
-gameStart();
+gameStart(
+    
+);
 
 // this function will define the parameters of a reset game and will be added to each button to help reset
 function resetGame(){
@@ -46,15 +48,17 @@ function scoreWin(){
     if (userScore === computerPick){
         alert("YER A WIZARD, HARRY!");
         wins++;
-        $("#wins").text(wins);
+        $("#wins").text("Wins: " + wins);
         resetGame();
+
     }
     //for a loss
     else if (userScore>computerPick){
         alert("These jewels are worthless. Khajit does not want trade.");
         losses++;
-        $("#losses").text(losses);
+        $("#losses").text("Losses: " + losses);
         resetGame();
+
     }
     //for not quite there
     else{
@@ -65,25 +69,25 @@ function scoreWin(){
 //on.click functions for each crystal. they must increment correctly and compare score to both userpick & compPick
 
 $("#ruby").on("click", function () {
-    score = userScore += ruby;
+    score = userScore += 5;
     $("#score-area").html(score);
     scoreWin();
 });
 
 $("#diamond").on("click", function () {
-    score = userScore += diamond;
+    score = userScore += 8;
     $("#score-area").html(score);
     scoreWin();
 });
 
 $("#topaz").on("click", function () {
-    score = userScore += topaz;
+    score = userScore += 12;
     $("#score-area").html(score);
     scoreWin();
 });
 
 $("#emerald").on("click", function () {
-    score = userScore += emerald;
+    score = userScore += 4;
     $("#score-area").html(score);
     scoreWin();
 });
